@@ -1,0 +1,60 @@
+ul {
+    background-color: #8e44ad; 
+    list-style-type: none;   
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+/* Imagenes del header y nav */
+
+.logo-up {
+    width: 100px;
+    height: 100px;
+}
+
+.correo-up {
+    width: 50px;
+    height: 50px;
+}
+
+.perfil-up {
+    width: 50px;
+    height: 50px;
+}
+
+.carrito-up {
+    width: 50px;
+    height: 50px;
+}
+
+/* Imagenes del footer */
+
+.logo-down {
+    width: 100px;
+    height: 100px;
+}
+
+.correo-down {
+    width: 50px;
+    height: 50px;
+}
+
+
+.perfil-down {
+    width: 50px;
+    height: 50px;
+}
+
+.carrito-down {
+    width: 50px;
+    height: 50px;
+}
+
+/* Imagenes quienes somos */
+
+.local-img {
+    width: 200px;
+    height: 200px;
+}
