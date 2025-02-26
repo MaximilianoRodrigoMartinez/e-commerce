@@ -4,78 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MeM</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');</style>
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Open+Sans:wght@300..800&display=swap');
+    </style>
 </head>
-
 <body>
-    <header>     
-
-        <nav>
-            <div>
-                <a href="index.html"><img class="logo-up" src="assets/images/logo.webp" alt="Logo"></a>
-            </div>
-
-            <div>
+    <header>
+        <!-- Logo -->
+        <div class="logo-up">
+            <a href="index.html"><img src="./assets/images/logo.webp" alt="Logo"></a>
+        </div>
+        <!-- Barra de navegación superior -->
+        <nav class="up-navbar">
+            <!-- Barra de búsqueda -->
+            <div class="search-up">
                 <form action="#">
                     <input type="text" name="search" id="search" placeholder="Buscar">
                     <button>Buscar</button>
                 </form>
-            </div>
-
-            <div>
-                <a href="pages/contacto.html"><img class="correo-up" src="assets/images/correo-electronico.png" alt="Contacto"></a>
-                <a href="pages/perfiles.html"><img class="perfil-up" src="assets/images/usuario-de-perfil.png" alt="Perfil"></a>
-                <a href="pages/carrito.html"><img class="carrito-up" src="assets/images/carrito-de-compras.png" alt="Carrito"></a>
-            </div>
-
-            <div>
-                <ul>
-                    <li><a href="pages/productos.html">Hombre</a></li>
-                    <li><a href="pages/productos.html">Mujer</a></li>
-                    <li><a href="pages/productos.html">Niños</a></li>
-                    <li><a href="pages/productos.html">Calzado</a></li>
-                    <li><a href="pages/quienes-somos.html">Quienes somos</a></li>
-                </ul>
+            </div> 
+            <!-- Íconos a la derecha -->
+            <div class="up-navbar-icons">
+                <a href="./pages/contacto.html"><img src="/assets/images/correo-electronico.png" alt="Contacto"></a>
+                <a href="./pages/perfiles.html"><img src="/assets/images/usuario-de-perfil.png" alt="Perfil"></a>
+                <a href="./pages/carrito.html"><img src="/assets/images/carrito-de-compras.png" alt="Carrito"></a>
             </div>
         </nav>
-
-        <marquee>This text will scroll from right to left</marquee>
-
+        <!-- Barra de navegación inferior -->
+        <nav class="navbar-up-bottom">
+            <ul class="up-navbar-menu">
+                <li><a href="./pages/productos.html">Hombre</a></li>
+                <li><a href="./pages/productos.html">Mujer</a></li>
+                <li><a href="./pages/productos.html">Niños</a></li>
+                <li><a href="./pages/productos.html">Calzado</a></li>
+                <li><a href="./pages/quienes-somos.html">Quienes somos</a></li>
+            </ul>
+        </nav>    
     </header>
-
+    <!-- Fila de marquesina -->
+    <div class="marquee">
+        <marquee>
+            <span>
+                This text will scroll from right to left
+                This text will scroll from right to left
+            </span>
+        </marquee>
+    </div>
     <main>
-        <div> Carrousel </div>
-        <div> 4 imagenes </div>
-        <div> Carrousel </div>
-        <div> 2 imagenes </div>
-        <div> Carrousel de logos </div>
+        <section class="carousel">
+            <div> Carrousel </div>
+        </section>
+    
+        <section class="imagenes">
+            <div> 4 imágenes </div>
+        </section>
+    
+        <section class="carousel">
+            <div> Carrousel </div>
+        </section>
+    
+        <section class="imagenes">
+            <div> 2 imágenes </div>
+        </section>
+    
+        <section class="logos">
+            <div> Carrousel de logos </div>
+        </section>
     </main>
-        
     <footer>
-        <nav>            
-            <div>
+        <section class="footer-links">
+            <nav>            
                 <ul>
                     <li><a href="pages/productos.html">Hombre</a></li>
                     <li><a href="pages/productos.html">Mujer</a></li>
                     <li><a href="pages/productos.html">Niños</a></li>
                     <li><a href="pages/productos.html">Calzado</a></li>
-                    <li><a href="pages/quienes-somos.html">Quienes somos</a></li>
+                    <li><a href="pages/quienes-somos.html">Quiénes somos</a></li>
                 </ul>
-            </div>
-            <div>
-                <a href="pages/contacto.html"><img class="correo-down" src="assets/images/correo-electronico.png" alt="Contacto"></a>
-                <a href="pages/perfiles.html"><img class="perfil-down" src="assets/images/usuario-de-perfil.png" alt="Perfil"></a>
-                <a href="pages/carrito.html"><img class="carrito-down" src="assets/images/carrito-de-compras.png" alt="Carrito"></a>
-                <div >
-                    <a href="index.html"><img class="logo-down" src="assets/images/logo.webp" alt="Logo"></a>
-                </div>
-            </div>    
-        </nav>
-        <div>
-            Copyright
-        </div>
+            </nav>
+        </section>
+    
+        <section class="footer-icons">
+            <a href="pages/contacto.html"><img class="correo-down" src="assets/images/correo-electronico.png" alt="Contacto"></a>
+            <a href="pages/perfiles.html"><img class="perfil-down" src="assets/images/usuario-de-perfil.png" alt="Perfil"></a>
+            <a href="pages/carrito.html"><img class="carrito-down" src="assets/images/carrito-de-compras.png" alt="Carrito"></a>
+        </section>
+    
+        <section class="footer-logo">
+            <a href="index.html"><img class="logo-down" src="assets/images/logo.webp" alt="Logo"></a>
+        </section>
+    
+        <section class="copyright">
+            <p>Copyright</p>
+        </section>
     </footer>
-
 </body>
 </html>
