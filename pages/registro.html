@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="/styles/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
@@ -56,31 +56,33 @@
             <span>¡Envíos gratis a partir de $30.000! | 3 cuotas sin interés con todas las tarjetas</span>
         </marquee>
     </div>
-    <main class="main-contacto">
-        <div class="contacto">
-            <h1>Contacto</h1>
-            <p>Envianos tu consulta por medio de nuestro formulario de contacto seleccionando el destinatario deseado. Te responderemos a la brevedad.</p>
+    <main class="main-registro">
+        <div class="registro">
+            <h1>Regístrate para Comprar y Recibir Ofertas Especiales</h1>
+            <p>Únete a nuestra tienda para disfrutar de una experiencia de compra personalizada y recibe nuestro newsletter con las últimas tendencias y descuentos exclusivos.</p>
         </div>
-        <form class="contacto-form" action="#">
-            <label for="destinatario">Destinatario</label>
-            <select name="destinatario" id="destinatario">
-                <option value="ventas">Ventas</option>
-                <option value="soporte">Soporte</option>
-                <option value="administracion">Administración</option>
-            </select>
+        <form class="registro-form" action="#" method="POST">
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre" required>
+            <label for="telefono">Apellido</label>
+            <input type="text" name="apellido" id="apellido" required> 
             <label for="email">Email</label>
             <input type="email" name="email" id="email" required>
             <label for="telefono">Teléfono</label>
-            <input type="tel" name="telefono" id="telefono">
-            <label for="asunto">Asunto</label>  
-            <input type="text" name="asunto" id="asunto" required>
-            <label for="mensaje">Mensaje</label>
-            <textarea name="mensaje" id="mensaje" cols="30" rows="10" required></textarea>
+            <input type="number" name="number" id="number" required>
+            <label for="telefono">Contraseña</label>
+            <input type="password" name="password" id="password" required>
+            <label for="telefono">Repetir Contraseña</label>
+            <input type="password" name="repeat-password" id="repeat-password" required>       
+            <label for="telefono">Dirección</label>
+            <input type="text" name="direccion" id="direccion" required>       
+            <label for="telefono">Provincia</label>
+            <input type="text" name="provincia" id="provincia" required>
+            <label for="telefono">Ciudad</label>
+            <input type="text" name="ciudad" id="ciudad" required>
             <div class="g-recaptcha" data-sitekey="TU_CLAVE_DEL_SITIO_AQUI"></div>
             <button type="submit">Enviar</button>
-        </form>
+        </form>      
     </main>
     <footer class="footer">
         <div class="footer-container">

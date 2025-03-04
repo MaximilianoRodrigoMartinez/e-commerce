@@ -1,56 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quienes somos</title>
+    <title>Carrito</title>
     <link rel="stylesheet" href="/styles/style.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 </head>
-
 <body>
-
-    <header>
-        <nav>
-            <div>
-                <a href="/index.html"><img class="logo-up" src="/assets/images/logo.webp" alt="Logo"></a>
-            </div>
-
-            <div>
-                <form action="#">
+    <header class="header">
+        <!-- Logo -->
+        <div class="logo-up">
+            <a href="/index.html">
+                <img src="/assets/images/logo.webp" alt="Logo">
+            </a>
+        </div>
+        <!-- Barra de navegación superior -->
+        <nav class="up-navbar">
+            <!-- Barra de búsqueda -->
+            <div class="search-up">
+                <form class="search-form" action="#">
                     <input type="text" name="search" id="search" placeholder="Buscar">
                     <button>Buscar</button>
                 </form>
-            </div>
-
-            <div>
-                <a href="/pages/contacto.html"><img class="correo-up" src="/assets/images/correo-electronico.png" alt="Contacto"></a>
-                <a href="/pages/perfiles.html"><img class="perfil-up" src="/assets/images/usuario-de-perfil.png" alt="Perfil"></a>
-                <a href="/pages/carrito.html"><img class="carrito-up" src="/assets/images/carrito-de-compras.png" alt="Carrito"></a>
-            </div>
-
-            <div>
-                <ul>
-                    <li><a href="/pages/productos.html">Hombre</a></li>
-                    <li><a href="/pages/productos.html">Mujer</a></li>
-                    <li><a href="/pages/productos.html">Niños</a></li>
-                    <li><a href="/pages/productos.html">Calzado</a></li>
-                    <li><a href="/pages/quienes-somos.html">Quienes somos</a></li>
-                </ul>
+            </div> 
+            <!-- Íconos a la derecha -->
+            <div class="up-navbar-icons">
+                <a href="/pages/contacto.html">
+                    <img src="/assets/images/correo-electronico.png" alt="Contacto">
+                </a>
+                <a href="/pages/registro.html">
+                    <img src="/assets/images/usuario-de-perfil.png" alt="Perfil">
+                </a>
+                <a href="/pages/carrito.html">
+                    <img src="/assets/images/carrito-de-compras.png" alt="Carrito">
+                </a>
             </div>
         </nav>
+        <!-- Barra de navegación inferior -->
+        <nav class="navbar-up-bottom">
+            <ul class="up-navbar-menu">
+                <li><a href="/pages/productos.html">Hombre</a></li>
+                <li><a href="/pages/productos.html">Mujer</a></li>
+                <li><a href="/pages/productos.html">Niños</a></li>
+                <li><a href="/pages/productos.html">Calzado</a></li>
+                <li><a href="/pages/quienes-somos.html">Quienes somos</a></li>
+            </ul>
+        </nav>    
     </header>
+    <!-- Fila de marquesina -->
+    <div class="marquee">
+        <marquee>
+            <span>¡Envíos gratis a partir de $30.000! | 3 cuotas sin interés con todas las tarjetas</span>
+        </marquee>
+    </div>
+    <main>   
 
-    <main>
-        <div>
-            <h1>Realiza tu compra aqui</h1>
-            <p>Confirma la opcion</p>
-        </div>
     </main>
-    
-    <footer>
-        <nav>            
-            <div>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Navbar abajo -->
+            <div class="down-navbar-menu">
                 <ul>
                     <li><a href="/pages/productos.html">Hombre</a></li>
                     <li><a href="/pages/productos.html">Mujer</a></li>
@@ -59,21 +71,26 @@
                     <li><a href="/pages/quienes-somos.html">Quienes somos</a></li>
                 </ul>
             </div>
-            <div>
-                <a href="/pages/contacto.html"><img class="correo-down" src="/assets/images/correo-electronico.png" alt="Contacto"></a>
-                <a href="/pages/perfiles.html"><img class="perfil-down" src="/assets/images/usuario-de-perfil.png" alt="Perfil"></a>
-                <a href="/pages/carrito.html"><img class="carrito-down" src="/assets/images/carrito-de-compras.png" alt="Carrito"></a>
-                <div>
-                    <a href="/index.html"><img class="logo-down" src="/assets/images/logo.webp" alt="Logo"></a>
-                </div>
-            </div>    
-        </nav>
-        <div>
-            Copyright
+            <!-- Iconos abajo -->
+            <div class="down-navbar-icons">
+                <a href="/pages/contacto.html">
+                    <img class="correo-down" src="/assets/images/correo-electronico.png" alt="Contacto">
+                </a>
+                <a href="/pages/registro.html">
+                    <img class="registro-down" src="/assets/images/usuario-de-perfil.png" alt="Perfil">
+                </a>
+                <a href="/pages/carrito.html">
+                    <img class="carrito-down" src="/assets/images/carrito-de-compras.png" alt="Carrito">
+                </a>
+            </div>
+            <!-- Logo abajo -->
+            <div class="logo-down">
+                <a href="/index.html">
+                    <img class="logo-down" src="/assets/images/logo.webp" alt="Logo">
+                </a>
+            </div>
         </div>
     </footer>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
-
-
 </html>
