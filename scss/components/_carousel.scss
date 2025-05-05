@@ -1,0 +1,104 @@
+#mainCarousel {
+    max-height: 70vh;
+    overflow: hidden;
+  
+    .carousel-item {
+      height: 50vh;
+  
+      img {
+        height: 100%;
+        object-position: center;
+      }
+    }
+  }
+  
+  .logos-carousel {
+    img {
+      filter: grayscale(100%);
+      transition: all 0.3s;
+      opacity: 0.7;
+  
+      &:hover {
+        filter: grayscale(0);
+        opacity: 1;
+      }
+    }
+  }
+  
+  #secondaryCarousel {
+    margin: 2rem auto;
+  
+    .carousel-item {
+      padding: 0 15px;
+  
+      .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 15px;
+      }
+    }
+  
+    .col-md-6 {
+      flex: 0 0 auto;
+      width: 50%;
+      scroll-snap-align: start;
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  
+    .row::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+  .brands-section {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .brands-carousel {
+    @include flex-center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+  .brand-slide {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    width: 150px;
+    transition: all 0.3s ease;
+    padding: 10px;
+  
+    img {
+      width: 100%;
+      height: auto;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        filter: grayscale(0);
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+  }

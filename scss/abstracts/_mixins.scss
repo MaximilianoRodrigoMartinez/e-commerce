@@ -1,0 +1,13 @@
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @mixin hover-effect {
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }

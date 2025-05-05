@@ -1,0 +1,36 @@
+.up-navbar-icons {
+    height: 100%;
+    @include flex-center;
+    gap: 25px;
+  
+    img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      @include hover-effect;
+    }
+  }
+  
+  .down-navbar-icons {
+    display: flex;
+    gap: 25px;
+  
+    img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      @include hover-effect;
+    }
+  }
+  
+  .logo-up {
+    position: absolute;
+    height: 100%;
+  }
+  
+  .correo-up,
+  .perfil-up,
+  .carrito-up {
+    width: 50px;
+    height: 50px;
+  }

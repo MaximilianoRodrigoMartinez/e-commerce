@@ -1,0 +1,26 @@
+// 1. Abstracts (variables y mixins primero)
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// 2. Base (estilos generales)
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/base';
+
+// 3. Components (componentes reutilizables)
+@import 'components/buttons';
+@import 'components/carousel';
+@import 'components/forms';
+@import 'components/navbar';
+@import 'components/icons';
+
+// 4. Layout (estructura principal)
+@import 'layout/header';
+@import 'layout/footer';
+
+// 5. Pages (estilos específicos de páginas)
+@import 'pages/home';
+@import 'pages/contact';
+@import 'pages/products';
+@import 'pages/cart';
+@import 'pages/about';

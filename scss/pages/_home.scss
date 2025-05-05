@@ -1,0 +1,13 @@
+.marquee {
+    @include flex-center;
+    background-color: $color-white;
+    color: $color-secondary;
+    height: 100%;
+    width: 100%;
+    padding-top: 50px;
+  
+    &-content {
+      width: 100%;
+      text-align: center;
+    }
+  }

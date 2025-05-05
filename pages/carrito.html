@@ -7,11 +7,12 @@
     <meta name="keywords" content="ecommerce, comprar, ropa urbana, Argentina">
     <meta name="author" content="MeM">
     <title>Carrito</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/main.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
 </head>
+<body>
     <header class="header">
         <!-- Logo -->
         <div class="logo-up">
@@ -58,90 +59,99 @@
             <span>¡Envíos gratis a partir de $30.000! | 3 cuotas sin interés con todas las tarjetas</span>
         </marquee>
     </div>
-    <!-- Contenido principal del carrito -->
-    <main class="carrito-container">
-        <h1>Detalles del pedido</h1>
+<!-- Contenido principal del carrito -->
+<main class="carrito-container">
+    <h1>Tu Carrito</h1>
+    
+    <!-- Layout de dos columnas -->
+    <div class="carrito-grid">
+        <!-- Columna izquierda - Productos -->
+        <div class="carrito-productos">
+            <section class="productos-carrito">
+                <div class="producto">
+                    <img src="../assets/images/remera.jpg" alt="Producto en carrito">
+                    <div class="producto-info">
+                        <h3>Remera Oversize Negra</h3>
+                        <p>Talle: M | Color: Negro</p>
+                        <p class="precio">$9.999</p>
+                        <div class="cantidad">
+                            <button class="btn-cantidad">-</button>
+                            <span>1</span>
+                            <button class="btn-cantidad">+</button>
+                        </div>
+                        <button class="eliminar">Eliminar</button>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="../assets/images/remera.jpg" alt="Producto en carrito">
+                    <div class="producto-info">
+                        <h3>Remera Oversize Blanca</h3>
+                        <p>Talle: L | Color: Blanco</p>
+                        <p class="precio">$9.999</p>
+                        <div class="cantidad">
+                            <button class="btn-cantidad">-</button>
+                            <span>1</span>
+                            <button class="btn-cantidad">+</button>
+                        </div>
+                        <button class="eliminar">Eliminar</button>
+                    </div>
+                </div>
+            </section>
+        </div>
         
-        <!-- Sección de productos en el carrito -->
-        <section class="productos-carrito">
-            <div class="producto">
-                <img src="../assets/images/remera.jpg" alt="Producto en carrito">
-                <div class="producto-info">
-                    <h3>Nombre del Producto</h3>
-                    <p>Talle: M | Color: Negro</p>
-                    <p class="precio">$9.999</p>
-                    <div class="cantidad">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <button class="eliminar">Eliminar</button>
-                </div>
-            </div>
-            <div class="producto">
-                <img src="../assets/images/remera.jpg" alt="Producto en carrito">
-                <div class="producto-info">
-                    <h3>Nombre del Producto</h3>
-                    <p>Talle: L | Color: Negro</p>
-                    <p class="precio">$9.999</p>
-                    <div class="cantidad">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <button class="eliminar">Eliminar</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Productos destacados -->
-        <section class="destacados">
-            <h2>Productos destacados</h2>
-            <div class="carousel-destacados">
-                <!-- Ejemplo de producto destacado -->
-                <div class="producto-destacado">
-                    <img src="../assets/images/remera.jpg" alt="Producto destacado">
-                    <h3>Producto Nuevo</h3>
-                    <p>$12.999</p>
-                </div>
-                <!-- Ejemplo de producto destacado -->
-                <div class="producto-destacado">
-                    <img src="../assets/images/remera.jpg" alt="Producto destacado">
-                    <h3>Producto Nuevo</h3>
-                    <p>$12.999</p>
-                </div>
-                <!-- Ejemplo de producto destacado -->
-                <div class="producto-destacado">
-                    <img src="../assets/images/remera.jpg" alt="Producto destacado">
-                    <h3>Producto Nuevo</h3>
-                    <p>$12.999</p>
-                </div>
-                <!-- Ejemplo de producto destacado -->
-                <div class="producto-destacado">
-                    <img src="../assets/images/remera.jpg" alt="Producto destacado">
-                    <h3>Producto Nuevo</h3>
-                    <p>$12.999</p>
-                </div>
-                <!-- Ejemplo de producto destacado -->
-                <div class="producto-destacado">
-                    <img src="../assets/images/remera.jpg" alt="Producto destacado">
-                    <h3>Producto Nuevo</h3>
-                    <p>$12.999</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Resumen y botón de compra -->
-        <section class="resumen-compra">
-            <div class="resumen">
+        <!-- Columna derecha - Resumen -->
+        <div class="carrito-resumen">
+            <section class="resumen-compra">
                 <h3>Resumen del pedido</h3>
-                <p>Subtotal: <span>$9.999</span></p>
-                <p>Envío: <span>Gratis</span></p>
-                <p class="total">Total: <span>$9.999</span></p>
+                <div class="resumen-item">
+                    <span>Subtotal:</span>
+                    <span>$19.998</span>
+                </div>
+                <div class="resumen-item">
+                    <span>Envío:</span>
+                    <span>Gratis</span>
+                </div>
+                <div class="resumen-item total">
+                    <span>Total:</span>
+                    <span>$19.998</span>
+                </div>
                 <button class="btn-comprar">Finalizar compra</button>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Productos destacados -->
+    <section class="destacados">
+        <h2>Productos destacados</h2>
+        <div class="carousel-destacados">
+            <div class="producto-destacado">
+                <img src="../assets/images/remera.jpg" alt="Producto destacado">
+                <h3>Buzo Oversize</h3>
+                <p>$12.999</p>
+                <button class="btn-agregar">Agregar al carrito</button>
             </div>
-        </section>
-    </main>
+            <div class="producto-destacado">
+                <img src="../assets/images/remera.jpg" alt="Producto destacado">
+                <h3>Pantalón Cargo</h3>
+                <p>$14.999</p>
+                <button class="btn-agregar">Agregar al carrito</button>
+            </div>
+            <div class="producto-destacado">
+                <img src="../assets/images/remera.jpg" alt="Producto destacado">
+                <h3>Camisa Flannel</h3>
+                <p>$15.999</p>
+                <button class="btn-agregar">Agregar al carrito</button>
+            </div>
+            <div class="producto-destacado">
+                <img src="../assets/images/remera.jpg" alt="Producto destacado">
+                <h3>Zapatillas Urbanas</h3>
+                <p>$22.999</p>
+                <button class="btn-agregar">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+</main>
+    
     <footer class="footer">
         <div class="footer-container">
             <!-- Navbar abajo -->
