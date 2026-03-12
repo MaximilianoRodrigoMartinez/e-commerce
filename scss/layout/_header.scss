@@ -1,0 +1,18 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $color-secondary;
+  box-shadow: $shadow;
+  z-index: 1000;
+
+  .logo-up {
+    padding: $space-2 $space-4;
+
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+}

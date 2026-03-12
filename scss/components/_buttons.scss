@@ -1,0 +1,73 @@
+// Botón base reutilizable
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  padding: $space-2 $space-4;
+  border-radius: $radius-pill;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.1s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: $shadow-subtle;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  color: $color-white;
+  box-shadow: $shadow-soft;
+
+  &:hover {
+    background-color: lighten($color-primary, 5%);
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: $color-primary;
+  border-color: rgba($color-primary, 0.7);
+
+  &:hover {
+    background-color: rgba($color-primary, 0.08);
+  }
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: $color-secondary;
+
+  &:hover {
+    background-color: rgba($color-secondary, 0.04);
+  }
+}
+
+.btn-sm {
+  padding: $space-1 $space-3;
+  font-size: 0.85rem;
+}
+
+.btn-lg {
+  padding: $space-3 $space-5;
+  font-size: 1rem;
+}
+

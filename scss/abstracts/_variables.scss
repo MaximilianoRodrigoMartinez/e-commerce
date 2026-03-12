@@ -1,0 +1,39 @@
+// Palette
+$color-primary: #4c3adb; // violeta azulado principal
+$color-secondary: #0f172a; // casi negro azulado para texto
+$color-accent: #f97316; // acento cálido para detalles
+$color-bg: #f3f4f6; // fondo gris muy claro
+$color-surface: #ffffff; // superficies (cards, contenedores)
+$color-border-subtle: rgba(15, 23, 42, 0.08);
+$color-text-muted: #6b7280;
+$color-text-light: #e5e7eb; // texto sobre fondos oscuros (nav, footer)
+$color-success: #16a34a;
+$color-error: #dc2626;
+$color-white: #ffffff;
+
+// Radius
+$radius-xs: 4px;
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+$radius-pill: 999px;
+
+// Shadows
+$shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.08);
+$shadow-subtle: 0 2px 8px rgba(15, 23, 42, 0.04);
+$shadow: $shadow-soft; // alias para compatibilidad
+
+// Spacing scale
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
+$space-8: 32px;
+$space-10: 40px;
+$space-12: 48px;
+$space-16: 64px;
+
+// Layout
+$max-width-page: 1200px;

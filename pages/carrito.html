@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-commerce de ropa urbana. Compra online con envíos a todo el país.">
+    <meta name="keywords" content="ecommerce, comprar, ropa urbana, Argentina">
+    <meta name="author" content="MeM">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+    <header class="header">
+        <!-- Logo -->
+        <div class="logo-up">
+            <a href="../index.html">
+                <img src="../assets/images/logo.webp" alt="Logo">
+            </a>
+        </div>
+        <!-- Barra de navegación superior -->
+        <nav class="up-navbar">
+            <!-- Barra de búsqueda -->
+            <div class="search-up">
+                <form class="search-form" action="#">
+                    <input type="text" name="search" id="search" placeholder="Buscar">
+                    <button>Buscar</button>
+                </form>
+            </div> 
+            <!-- Íconos a la derecha -->
+            <div class="up-navbar-icons">
+                <a href="../pages/contacto.html">
+                    <img src="../assets/images/correo-electronico.png" alt="Contacto">
+                </a>
+                <a href="../pages/registro.html">
+                    <img src="../assets/images/usuario-de-perfil.png" alt="Perfil">
+                </a>
+                <a href="../pages/carrito.html">
+                    <img src="../assets/images/carrito-de-compras.png" alt="Carrito">
+                </a>
+            </div>
+        </nav>
+        <!-- Barra de navegación inferior -->
+        <nav class="navbar-up-bottom">
+            <ul class="up-navbar-menu">
+                <li><a href="../pages/productos.html">Hombre</a></li>
+                <li><a href="../pages/productos.html">Mujer</a></li>
+                <li><a href="../pages/productos.html">Niños</a></li>
+                <li><a href="../pages/productos.html">Calzado</a></li>
+                <li><a href="../pages/quienes-somos.html">Quienes somos</a></li>
+            </ul>
+        </nav>    
+    </header>
+    <!-- Fila de marquesina -->
+    <div class="marquee">
+        <marquee>
+            <span>¡Envíos gratis a partir de $30.000! | 3 cuotas sin interés con todas las tarjetas</span>
+        </marquee>
+    </div>
+<!-- Contenido principal del carrito -->
+<main class="carrito-container">
+    <h1>Tu Carrito</h1>
+
+    <!-- Estado vacío: agregar clase carrito-vacio a <main> para mostrar -->
+    <div class="carrito-empty-state empty-state" aria-hidden="true">
+        <div class="empty-state-icon" aria-hidden="true">🛒</div>
+        <h2 class="empty-state-title">Tu carrito está vacío</h2>
+        <p class="empty-state-text">Agregá productos desde el catálogo y volvé cuando quieras finalizar tu compra.</p>
+        <a href="../pages/productos.html" class="empty-state-cta">Ver productos</a>
+    </div>
+    
+    <!-- Layout de dos columnas (oculto cuando carrito vacío) -->
+    <div class="carrito-grid">
+        <!-- Columna izquierda - Productos -->
+        <div class="carrito-productos">
+            <section class="productos-carrito">
+                <div class="producto">
+                    <img src="../assets/images/remera.jpg" alt="Producto en carrito">
+                    <div class="producto-info">
+                        <h3>Remera Oversize Negra</h3>
+                        <p>Talle: M | Color: Negro</p>
+                        <p class="precio">$9.999</p>
+                        <div class="cantidad">
+                            <button class="btn-cantidad">-</button>
+                            <span>1</span>
+                            <button class="btn-cantidad">+</button>
+                        </div>
+                        <button class="eliminar">Eliminar</button>
+                    </div>
+                </div>
+                <div class="producto">
+                    <img src="../assets/images/remera.jpg" alt="Producto en carrito">
+                    <div class="producto-info">
+                        <h3>Remera Oversize Blanca</h3>
+                        <p>Talle: L | Color: Blanco</p>
+                        <p class="precio">$9.999</p>
+                        <div class="cantidad">
+                            <button class="btn-cantidad">-</button>
+                            <span>1</span>
+                            <button class="btn-cantidad">+</button>
+                        </div>
+                        <button class="eliminar">Eliminar</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Columna derecha - Resumen -->
+        <div class="carrito-resumen">
+            <section class="resumen-compra">
+                <h3>Resumen del pedido</h3>
+                <div class="resumen-item">
+                    <span>Subtotal:</span>
+                    <span>$19.998</span>
+                </div>
+                <div class="resumen-item">
+                    <span>Envío:</span>
+                    <span>Gratis</span>
+                </div>
+                <div class="resumen-item total">
+                    <span>Total:</span>
+                    <span>$19.998</span>
+                </div>
+                <button class="btn-comprar">Finalizar compra</button>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Productos destacados -->
+    <section class="destacados">
+        <h2>Productos destacados</h2>
+        <div class="carousel-destacados">
+            <div class="producto-destacado">
+                <img src="../assets/images/remera.jpg" alt="Producto destacado">
+                <h3>Buzo Oversize</h3>
+                <p>$12.999</p>
+                <button class="btn-agregar">Agregar al carrito</button>
+            </div>
+            <div class="producto-destacado">
+                <img src="../assets/images/remera.jpg" alt="Producto destacado">
+                <h3>Pantalón Cargo</h3>
+                <p>$14.999</p>
+                <button class="btn-agregar">Agregar al carrito</button>
+            </div>
+            <div class="producto-destacado">
+                <img src="../assets/images/remera.jpg" alt="Producto destacado">
+                <h3>Camisa Flannel</h3>
+                <p>$15.999</p>
+                <button class="btn-agregar">Agregar al carrito</button>
+            </div>
+            <div class="producto-destacado">
+                <img src="../assets/images/remera.jpg" alt="Producto destacado">
+                <h3>Zapatillas Urbanas</h3>
+                <p>$22.999</p>
+                <button class="btn-agregar">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+</main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Navbar abajo -->
+            <div class="down-navbar-menu">
+                <ul>
+                    <li><a href="../pages/productos.html">Hombre</a></li>
+                    <li><a href="../pages/productos.html">Mujer</a></li>
+                    <li><a href="../pages/productos.html">Niños</a></li>
+                    <li><a href="../pages/productos.html">Calzado</a></li>
+                    <li><a href="../pages/quienes-somos.html">Quienes somos</a></li>
+                </ul>
+            </div>
+            <!-- Iconos abajo -->
+            <div class="down-navbar-icons">
+                <a href="../pages/contacto.html">
+                    <img class="correo-down" src="../assets/images/correo-electronico.png" alt="Contacto">
+                </a>
+                <a href="../pages/registro.html">
+                    <img class="registro-down" src="../assets/images/usuario-de-perfil.png" alt="Perfil">
+                </a>
+                <a href="../pages/carrito.html">
+                    <img class="carrito-down" src="../assets/images/carrito-de-compras.png" alt="Carrito">
+                </a>
+            </div>
+            <!-- Logo abajo -->
+            <div class="logo-down">
+                <a href="../index.html">
+                    <img class="logo-down" src="../assets/images/logo.webp" alt="Logo">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>

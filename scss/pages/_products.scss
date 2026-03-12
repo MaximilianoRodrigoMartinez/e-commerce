@@ -1,0 +1,170 @@
+.productos-main {
+  @extend .page-shell;
+}
+
+.productos-hero {
+  text-align: center;
+  padding: $space-8 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('../assets/images/logo.webp');
+  background-size: cover;
+  background-position: center;
+  color: $color-white;
+  margin-bottom: $space-6;
+  border-radius: $radius-lg;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: $space-2;
+  }
+
+  .productos-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+}
+
+.filtros-container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: $space-6;
+  align-items: flex-start;
+  margin-bottom: $space-6;
+}
+
+.filtro-precio,
+.filtro-categoria {
+  @extend .card-surface;
+  padding: $space-4;
+}
+
+.categoria-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba($color-secondary, 0.06);
+  }
+
+  a {
+    color: $color-secondary;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: $space-4;
+}
+
+.producto-card {
+  @extend .card-surface;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-soft;
+  }
+
+  .producto-imagen {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .producto-info {
+    padding: $space-4;
+
+    .producto-gama {
+      color: $color-text-muted;
+      font-size: 0.9rem;
+      margin: 5px 0;
+    }
+
+    .producto-precio {
+      font-weight: 700;
+      color: $color-primary;
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    .btn-agregar {
+      @extend .btn;
+      @extend .btn-primary;
+      width: 100%;
+    }
+  }
+}
+
+.producto-detalle {
+  @extend .page-shell;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: $space-8;
+  align-items: flex-start;
+}
+
+.producto-detalle-media {
+  @extend .card-surface;
+  padding: $space-4;
+}
+
+.producto-detalle-media img {
+  border-radius: $radius-md;
+}
+
+.producto-detalle-info {
+  @extend .card-surface;
+  padding: $space-5;
+
+  .producto-precio {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: $space-4;
+  }
+
+  .producto-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-3;
+    font-size: 0.9rem;
+    color: $color-text-muted;
+    margin-bottom: $space-4;
+  }
+
+  .producto-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-3;
+    margin-bottom: $space-4;
+  }
+}
+
+@media (max-width: 992px) {
+  .filtros-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .productos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .producto-detalle {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .productos-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

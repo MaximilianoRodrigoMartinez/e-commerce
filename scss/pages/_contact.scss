@@ -1,0 +1,28 @@
+.main-contacto,
+.main-registro {
+  @include flex-center(column);
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.contacto,
+.registro {
+  background-color: $color-white;
+  color: $color-secondary;
+  text-align: center;
+  padding: 15px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.main-contacto button,
+.main-registro button {
+  background-color: $color-primary;
+  color: $color-white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

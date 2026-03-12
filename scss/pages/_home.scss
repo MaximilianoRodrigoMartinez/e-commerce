@@ -1,0 +1,126 @@
+.marquee {
+  @include flex-center;
+  background-color: $color-surface;
+  color: $color-secondary;
+  min-height: 40px;
+  width: 100%;
+  padding: 0 $space-4;
+  border-bottom: 1px solid $color-border-subtle;
+
+  marquee {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+}
+
+.home-hero {
+  @extend .page-shell;
+  padding-top: $space-8;
+  padding-bottom: $space-8;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: $space-8;
+  align-items: center;
+}
+
+.home-hero-copy {
+  max-width: 520px;
+}
+
+.home-eyebrow {
+  @extend .eyebrow;
+}
+
+.home-title {
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  margin-bottom: $space-3;
+}
+
+.home-subtitle {
+  color: $color-text-muted;
+  font-size: 1rem;
+  margin-bottom: $space-5;
+}
+
+.home-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  align-items: center;
+  margin-bottom: $space-4;
+}
+
+.home-secondary-text {
+  font-size: 0.9rem;
+  color: $color-text-muted;
+}
+
+.home-hero-visual {
+  @extend .card-surface;
+  padding: $space-4;
+}
+
+.home-hero-visual img {
+  border-radius: $radius-lg;
+}
+
+.home-featured {
+  @extend .page-shell;
+  padding-top: 0;
+}
+
+.home-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: $space-4;
+}
+
+.home-featured-card {
+  @extend .card-surface;
+  overflow: hidden;
+
+  .card-body {
+    padding: $space-3;
+    text-align: center;
+  }
+
+  .btn-link {
+    font-weight: 600;
+    color: $color-secondary;
+  }
+}
+
+.home-brands {
+  @extend .page-shell;
+}
+
+.brands-carousel {
+  display: flex;
+  gap: $space-6;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.brand-slide {
+  padding: $space-3 $space-4;
+  border-radius: $radius-pill;
+  border: 1px solid $color-border-subtle;
+  background-color: $color-surface;
+}
+
+@media (max-width: 992px) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .home-featured-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
