@@ -1,0 +1,17 @@
+Ya hiciste el primer commit. Para subirlo a GitHub:
+
+1. Entrá a https://github.com/new
+
+2. Creá un repositorio nuevo:
+   - Nombre: MeM-ecommerce (o el que quieras)
+   - Público
+   - NO marques "Add a README" (ya tenés uno en el proyecto)
+
+3. En la carpeta MeM (en la terminal), ejecutá estos comandos
+   reemplazando TU_USUARIO por tu usuario de GitHub:
+
+   git branch -M main
+   git remote add origin https://github.com/TU_USUARIO/MeM-ecommerce.git
+   git push -u origin main
+
+Listo. Después podés borrar este archivo si querés.
