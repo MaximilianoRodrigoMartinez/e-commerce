@@ -1,46 +1,150 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+const navLinks = [
+  { to: '/productos', label: 'Hombre' },
+  { to: '/productos', label: 'Mujer' },
+  { to: '/productos', label: 'Niños' },
+  { to: '/productos', label: 'Calzado' },
+  { to: '/quienes-somos', label: 'Quiénes somos' },
+]
+
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-secondary text-white shadow-soft">
-      <div className="flex items-center justify-between gap-4 px-4 py-3 max-w-page mx-auto">
-        <div className="flex items-center shrink-0">
-          <Link to="/">
-            <img src="/assets/images/logo.webp" alt="Logo MeM" className="h-10 w-auto block" />
+    <header className="sticky top-0 z-50 w-full bg-black text-white shadow-lg">
+      {/* Fila principal: logo, búsqueda a un lado, iconos ordenados */}
+      <div className="flex items-center justify-between gap-4 px-4 sm:px-6 py-3">
+        <div className="flex items-center gap-4 min-w-0">
+          <Link to="/" className="shrink-0 flex items-center" aria-label="Inicio">
+            <img
+              src="/assets/images/logo.webp"
+              alt="Logo MeM"
+              className="h-20 sm:h-22 w-auto block object-contain"
+            />
           </Link>
+          {/* Búsqueda: no centrada, al lado del logo en desktop */}
+          <form
+            action="#"
+            className="hidden md:flex items-center gap-2 flex-1 min-w-0 max-w-xs"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <input
+              type="text"
+              name="search"
+              placeholder="Buscar..."
+              className="flex-1 min-w-0 h-9 px-3 rounded-full border border-white/20 bg-white/10 text-white placeholder:text-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            />
+            <button
+              type="submit"
+              className="h-9 px-4 rounded-full text-sm font-semibold shrink-0 bg-primary hover:bg-indigo-600 text-white transition"
+            >
+              Buscar
+            </button>
+          </form>
         </div>
-        <nav className="flex-1 min-w-0 flex items-center justify-between gap-4">
-          <div className="flex-1 min-w-0 flex justify-center">
-            <form action="#" className="flex items-center gap-2 w-full max-w-md" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="text"
-                name="search"
-                placeholder="Buscar productos, marcas..."
-                className="flex-1 min-w-0 h-9 px-3 rounded-full border border-gray-200 bg-white text-secondary text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-              <button type="submit" className="btn-primary h-9 px-4 text-sm shrink-0">Buscar</button>
-            </form>
-          </div>
-          <div className="flex items-center gap-3 shrink-0">
-            <Link to="/contacto" className="opacity-90 hover:opacity-100">
-              <img src="/assets/images/correo-electronico.png" alt="Contacto" className="w-6 h-6" />
-            </Link>
-            <Link to="/registro" className="opacity-90 hover:opacity-100">
-              <img src="/assets/images/usuario-de-perfil.png" alt="Perfil" className="w-6 h-6" />
-            </Link>
-            <Link to="/carrito" className="opacity-90 hover:opacity-100">
-              <img src="/assets/images/carrito-de-compras.png" alt="Carrito" className="w-6 h-6" />
-            </Link>
-          </div>
-        </nav>
+
+        {/* Iconos: ordenados y alineados a la derecha */}
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+          <Link
+            to="/contacto"
+            className="p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
+            aria-label="Contacto"
+          >
+            <img src="/assets/images/correo-electronico.png" alt="" className="w-5 h-5 sm:w-6 sm:h-6" />
+          </Link>
+          <Link
+            to="/registro"
+            className="p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
+            aria-label="Perfil"
+          >
+            <img src="/assets/images/usuario-de-perfil.png" alt="" className="w-5 h-5 sm:w-6 sm:h-6" />
+          </Link>
+          <Link
+            to="/carrito"
+            className="p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
+            aria-label="Carrito"
+          >
+            <img src="/assets/images/carrito-de-compras.png" alt="" className="w-5 h-5 sm:w-6 sm:h-6" />
+          </Link>
+          {/* Hamburguesa solo en móvil */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen((o) => !o)}
+            className="md:hidden p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
+            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
-      <nav className="flex justify-center items-center gap-6 py-2 px-4 border-t border-white/10">
-        <Link to="/productos" className="text-gray-300 hover:text-white text-sm font-medium transition">Hombre</Link>
-        <Link to="/productos" className="text-gray-300 hover:text-white text-sm font-medium transition">Mujer</Link>
-        <Link to="/productos" className="text-gray-300 hover:text-white text-sm font-medium transition">Niños</Link>
-        <Link to="/productos" className="text-gray-300 hover:text-white text-sm font-medium transition">Calzado</Link>
-        <Link to="/quienes-somos" className="text-gray-300 hover:text-white text-sm font-medium transition">Quiénes somos</Link>
+
+      {/* Barra de navegación: pegada al margen izquierdo en desktop */}
+      <nav
+        className="border-t border-white/10 px-4 sm:px-6"
+        aria-label="Principal"
+      >
+        <div className="hidden md:flex items-center gap-6 py-2.5 -mb-px">
+          {navLinks.map(({ to, label }) => (
+            <Link
+              key={label}
+              to={to}
+              className="text-gray-300 hover:text-white text-sm font-medium transition whitespace-nowrap"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
       </nav>
+
+      {/* Menú móvil (hamburguesa) */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+          menuOpen ? 'max-h-[320px] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="border-t border-white/10 bg-black/98 px-4 py-4 flex flex-col gap-3">
+          {/* Búsqueda en móvil */}
+          <form
+            action="#"
+            className="flex items-center gap-2"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <input
+              type="text"
+              name="search"
+              placeholder="Buscar productos, marcas..."
+              className="flex-1 min-w-0 h-10 px-3 rounded-full border border-white/20 bg-white/10 text-white placeholder:text-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+            <button
+              type="submit"
+              className="h-10 px-4 rounded-full text-sm font-semibold shrink-0 bg-primary hover:bg-indigo-600 text-white transition"
+            >
+              Buscar
+            </button>
+          </form>
+          {navLinks.map(({ to, label }) => (
+            <Link
+              key={label}
+              to={to}
+              onClick={() => setMenuOpen(false)}
+              className="text-gray-300 hover:text-white py-2 text-base font-medium transition"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+      </div>
     </header>
   )
 }
