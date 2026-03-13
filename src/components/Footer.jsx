@@ -10,7 +10,7 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black text-white border-t border-white/10 mt-12">
+    <footer className="w-full bg-black text-white border-t border-white/10">
       <div className="flex flex-wrap items-center justify-between gap-4 py-6 px-4 sm:px-6">
         <Link to="/" className="shrink-0" aria-label="Inicio">
           <img
@@ -46,21 +46,21 @@ export default function Footer() {
               className="p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
               aria-label="Contacto"
             >
-              <img src="/assets/images/correo-electronico.png" alt="" className="w-6 h-6" />
+              <img src="/assets/images/correo-electronico.png" alt="" className="w-7 h-7 sm:w-8 sm:h-8" />
             </Link>
             <Link
               to="/registro"
               className="p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
               aria-label="Perfil"
             >
-              <img src="/assets/images/usuario-de-perfil.png" alt="" className="w-6 h-6" />
+              <img src="/assets/images/usuario-de-perfil.png" alt="" className="w-7 h-7 sm:w-8 sm:h-8" />
             </Link>
             <Link
               to="/carrito"
               className="p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
               aria-label="Carrito"
             >
-              <img src="/assets/images/carrito-de-compras.png" alt="" className="w-6 h-6" />
+              <img src="/assets/images/carrito-de-compras.png" alt="" className="w-7 h-7 sm:w-8 sm:h-8" />
             </Link>
           </div>
         </div>

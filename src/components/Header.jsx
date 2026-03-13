@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 const navLinks = [
   { to: '/productos', label: 'Hombre' },
@@ -11,6 +11,13 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const location = useLocation()
+
+  // Cerrar menú móvil cuando cambia la ruta
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location.pathname])
 
   return (
     <header className="sticky top-0 z-50 w-full bg-black text-white shadow-lg">
@@ -53,21 +60,21 @@ export default function Header() {
               className="p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
               aria-label="Contacto"
             >
-              <img src="/assets/images/correo-electronico.png" alt="" className="w-6 h-6" />
+              <img src="/assets/images/correo-electronico.png" alt="" className="w-7 h-7 sm:w-8 sm:h-8" />
             </Link>
             <Link
               to="/registro"
               className="p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
               aria-label="Perfil"
             >
-              <img src="/assets/images/usuario-de-perfil.png" alt="" className="w-6 h-6" />
+              <img src="/assets/images/usuario-de-perfil.png" alt="" className="w-7 h-7 sm:w-8 sm:h-8" />
             </Link>
             <Link
               to="/carrito"
               className="p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
               aria-label="Carrito"
             >
-              <img src="/assets/images/carrito-de-compras.png" alt="" className="w-6 h-6" />
+              <img src="/assets/images/carrito-de-compras.png" alt="" className="w-7 h-7 sm:w-8 sm:h-8" />
             </Link>
             <button
               type="button"
@@ -108,13 +115,20 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Menú móvil (hamburguesa) */}
+      {/* Menú móvil (hamburguesa) - overlay deslizante */}
+      {menuOpen && (
+        <div
+          className="md:hidden fixed inset-0 bg-black/70 z-30"
+          aria-hidden="true"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
-          menuOpen ? 'max-h-[320px] opacity-100' : 'max-h-0 opacity-0'
+        className={`md:hidden fixed inset-x-0 top-20 bottom-0 z-40 transform transition-transform duration-300 ease-out ${
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="border-t border-white/10 bg-black/98 px-4 py-4 flex flex-col gap-3">
+        <div className="h-full border-t border-white/10 bg-black px-4 py-4 flex flex-col gap-4 overflow-y-auto">
           {/* Búsqueda en móvil */}
           <form
             action="#"
@@ -134,16 +148,18 @@ export default function Header() {
               Buscar
             </button>
           </form>
-          {navLinks.map(({ to, label }) => (
-            <Link
-              key={label}
-              to={to}
-              onClick={() => setMenuOpen(false)}
-              className="text-gray-300 hover:text-white py-2 text-base font-medium transition"
-            >
-              {label}
-            </Link>
-          ))}
+          <nav className="flex flex-col gap-2 mt-2" aria-label="Navegación móvil">
+            {navLinks.map(({ to, label }) => (
+              <Link
+                key={label}
+                to={to}
+                onClick={() => setMenuOpen(false)}
+                className="text-gray-300 hover:text-white py-2 text-base font-medium transition border-b border-white/5"
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </header>

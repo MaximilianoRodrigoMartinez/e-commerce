@@ -9,14 +9,16 @@ export default function QuienesSomosPage() {
           backgroundImage: "linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)), url('/assets/images/logo.webp')",
         }}
       >
-        <h1 className="text-4xl font-heading font-bold">MeM</h1>
-        <p className="text-gray-300 mt-2 text-lg">La empresa líder en moda urbana</p>
+        <h1 className="text-3xl md:text-4xl font-heading font-bold">MeM</h1>
+        <p className="text-gray-300 mt-2 text-base md:text-lg">Actitud urbana para todos los días</p>
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         <Card>
           <h2 className="text-xl font-heading font-semibold text-primary mb-4">La empresa</h2>
-          <p className="text-secondary">Somos una marca apasionada por el deporte y la moda, comprometida con ofrecer productos de alta calidad que combinen estilo y funcionalidad.</p>
+          <p className="text-secondary">
+            Somos una marca de streetwear pensada para el día a día, con prendas cómodas y cancheras que combinan estilo y funcionalidad.
+          </p>
         </Card>
         <Card>
           <h2 className="text-xl font-heading font-semibold text-primary mb-4">Historia y valores</h2>

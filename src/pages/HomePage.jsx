@@ -26,12 +26,13 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="px-0 pb-8 md:pb-12">
+      {/* Hero con carrusel */}
+      <section className="px-0 pb-0">
         {/* Carousel arriba, ancho completo y grande */}
         <div
           className="
             relative w-full
-            min-h-[590px] md:min-h-[690px] lg:min-h-[790px]
+            min-h-[480px] sm:min-h-[540px] md:min-h-[640px] lg:min-h-[740px]
             bg-secondary/20 overflow-hidden
           "
         >
@@ -80,21 +81,37 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-        {/* Texto abajo, centrado */}
-        <div className="max-w-page mx-auto px-4 pt-8 md:pt-12 text-center">
-          <p className="text-xs uppercase tracking-widest text-muted mb-2">Nueva temporada</p>
-          <h1 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-3">
-            Moda urbana pensada para vivir en movimiento
-          </h1>
-          <p className="text-muted mb-5 max-w-2xl mx-auto">
-            Prendas cómodas, versátiles y con estilo para el día a día. Envíos a todo el país y hasta 3 cuotas sin interés.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 mb-4">
-            <Link to="/productos"><Button>Ver catálogo completo</Button></Link>
-            <Link to="/carrito"><Button variant="ghost">Ir al carrito</Button></Link>
-          </div>
-          <p className="text-sm text-muted">Envíos gratis desde $30.000 · Cambios sin costo en sucursal</p>
+      </section>
+
+      {/* Wave debajo del hero, panza hacia arriba, inicio del contenido */}
+      <div className="text-black">
+        <svg
+          className="w-full h-8 md:h-12"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="currentColor"
+            transform="scale(1,-1) translate(0,-320)"
+            d="M0,192L60,186.7C120,181,240,171,360,176C480,181,600,203,720,213.3C840,224,960,224,1080,213.3C1200,203,1320,181,1380,170.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+          />
+        </svg>
+      </div>
+
+      {/* Texto principal de la home, separado del carrusel */}
+      <section className="max-w-page mx-auto px-4 pt-8 md:pt-12 pb-8 md:pb-12 text-center">
+        <p className="text-xs uppercase tracking-widest text-muted mb-2">Nueva colección</p>
+        <h1 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-3">
+          Explorá la colección y encontrá tu próximo outfit
+        </h1>
+        <p className="text-muted mb-5 max-w-2xl mx-auto">
+          Actitud urbana para todos los días. Envíos a todo el país, 3 cuotas sin interés y cambios sin costo.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3 mb-4">
+          <Link to="/productos"><Button>Ver catálogo completo</Button></Link>
+          <Link to="/carrito"><Button variant="ghost">Ir al carrito</Button></Link>
         </div>
+        <p className="text-sm text-muted">Envíos gratis desde $30.000 · Si no te queda, lo cambiamos</p>
       </section>
 
       <section className="max-w-page mx-auto px-4 pb-12">

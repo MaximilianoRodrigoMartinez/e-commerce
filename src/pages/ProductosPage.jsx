@@ -91,6 +91,13 @@ export default function ProductosPage() {
     return result
   }, [products, searchTerm, selectedCategory, maxPrice, sortOrder])
 
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <div className="w-full">
       {/* Hero de productos - logo grande con blur e imagen aspiracional */}
@@ -103,100 +110,87 @@ export default function ProductosPage() {
           />
         </div>
         <div className="relative max-w-page mx-auto px-4 py-16 md:py-20 flex flex-col md:flex-row items-start gap-10">
-          <div className="flex-1">
-            <div className="bg-black/45 backdrop-blur-sm rounded-3xl px-6 py-6 md:px-8 md:py-8 text-center md:text-left border border-white/5">
-              <p className="text-xs uppercase tracking-[0.2em] text-gray-300 mb-3">Colección MeM</p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight text-white">
-                Ropa urbana para vivir<br />
-                con <span className="text-accent">actitud</span>
-              </h1>
-              <p className="text-gray-300 mb-6 max-w-xl text-sm md:text-base">
-                Prendas cómodas y versátiles para todos los días. Filtrá por categoría, precio y estilo
-                para encontrar el próximo outfit de tu hermano en segundos.
-              </p>
-              <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-6">
-                <button
-                  type="button"
-                  className="btn-primary px-6"
-                  onClick={() => {
-                    setSelectedCategory('all')
-                    setSearchTerm('')
-                  }}
-                >
-                  Ver todo
-                </button>
-                <button
-                  type="button"
-                  className="btn-outline px-6 text-white border-white hover:bg-white/10"
-                  onClick={() => window.scrollTo({ top: 400, behavior: 'smooth' })}
-                >
-                  Explorar productos
-                </button>
+          <div className="flex-1 text-center md:text-left max-w-xl">
+            <p className="text-xs uppercase tracking-[0.2em] text-gray-300 mb-3">Explorá la colección</p>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight text-white">
+              Encontrá tu próximo outfit<br />
+              con <span className="text-accent">actitud urbana</span>
+            </h1>
+            <p className="text-gray-200 mb-6 text-sm md:text-base">
+              Prendas cómodas, versátiles y con estilo para todos los días. Explorá todos los productos de la tienda y armá tu look.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-8">
+              <button
+                type="button"
+                className="btn-primary px-6"
+                onClick={() => scrollToSection('productos-list')}
+              >
+                Ver productos
+              </button>
+            </div>
+            {/* Beneficios con iconos */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+              <div className="bg-white/10 rounded-2xl px-4 py-3 flex items-start gap-3 border border-white/10">
+                <div className="w-9 h-9 rounded-full bg-black/30 flex items-center justify-center shrink-0">
+                  <svg
+                    className="w-5 h-5 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 7h13l3 5v5a2 2 0 01-2 2H6a3 3 0 01-3-3V7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">Envíos a todo el país</p>
+                  <p className="text-xs text-gray-300">Recibí tu compra donde estés.</p>
+                </div>
               </div>
-              {/* Beneficios con iconos */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-xl mx-auto md:mx-0 text-left">
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-accent"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 7h13l3 5v5a2 2 0 01-2 2H6a3 3 0 01-3-3V7z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold">Envíos a todo el país</p>
-                    <p className="text-xs text-gray-300">Llegamos a donde esté tu cliente.</p>
-                  </div>
+              <div className="bg-white/10 rounded-2xl px-4 py-3 flex items-start gap-3 border border-white/10">
+                <div className="w-9 h-9 rounded-full bg-black/30 flex items-center justify-center shrink-0">
+                  <svg
+                    className="w-5 h-5 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 7h16M4 11h10M4 15h7"
+                    />
+                  </svg>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-accent"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 7h16M4 11h10M4 15h7"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold">3 cuotas sin interés</p>
-                    <p className="text-xs text-gray-300">Facilitá la compra sin complicaciones.</p>
-                  </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">3 cuotas sin interés</p>
+                  <p className="text-xs text-gray-300">Pagá en cuotas sin recargo.</p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-accent"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 4v6h4M20 20v-6h-4M4 10a8 8 0 0113.657-4.657M20 14A8 8 0 016.343 18.657"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold">Cambios sin costo</p>
-                    <p className="text-xs text-gray-300">Más confianza para tus compradores.</p>
-                  </div>
+              </div>
+              <div className="bg-white/10 rounded-2xl px-4 py-3 flex items-start gap-3 border border-white/10">
+                <div className="w-9 h-9 rounded-full bg-black/30 flex items-center justify-center shrink-0">
+                  <svg
+                    className="w-5 h-5 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 4v6h4M20 20v-6h-4M4 10a8 8 0 0113.657-4.657M20 14A8 8 0 016.343 18.657"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">Cambios sin costo</p>
+                  <p className="text-xs text-gray-300">Si no te queda, lo cambiamos.</p>
                 </div>
               </div>
             </div>
@@ -205,8 +199,8 @@ export default function ProductosPage() {
           <div className="flex-1 hidden md:flex justify-end">
             <div className="bg-black/40 rounded-3xl border border-white/10 shadow-soft overflow-hidden max-w-md">
               <img
-                src="/assets/images/promo2.webp"
-                alt="Look urbano MeM"
+                src="/assets/images/bannerproductos.jpg"
+                alt="Banner productos MeM"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -329,7 +323,7 @@ export default function ProductosPage() {
             </div>
 
             {/* Columna derecha: listado de productos */}
-            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <section id="productos-list" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {loading && (
                 <p className="text-muted col-span-full text-center py-8">Cargando productos...</p>
               )}

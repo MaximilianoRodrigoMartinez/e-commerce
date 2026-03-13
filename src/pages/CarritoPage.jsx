@@ -15,7 +15,7 @@ export default function CarritoPage() {
     return (
       <div className="max-w-page mx-auto px-4 py-12 text-center">
         <h1 className="text-2xl font-heading font-bold text-secondary mb-4">Tu carrito está vacío</h1>
-        <p className="text-muted mb-6">Agregá productos desde el catálogo para continuar.</p>
+        <p className="text-muted mb-6">Sumá prendas desde el catálogo y armá tu próximo outfit.</p>
         <Link to="/productos"><Button>Seguir comprando</Button></Link>
       </div>
     )
@@ -28,7 +28,10 @@ export default function CarritoPage() {
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-8 mb-12">
         <Card className="divide-y divide-gray-100 p-0">
           {items.map((item, index) => (
-            <div key={index} className="grid grid-cols-[100px_1fr_auto] gap-4 py-4 px-4 items-center">
+            <div
+              key={index}
+              className="grid grid-cols-[96px_minmax(0,1fr)] sm:grid-cols-[110px_minmax(0,1fr)] gap-4 py-4 px-4 items-center"
+            >
               <img src={item.image} alt={item.name} className="w-full h-24 object-cover rounded" />
               <div>
                 <h3 className="font-semibold text-secondary">{item.name}</h3>
