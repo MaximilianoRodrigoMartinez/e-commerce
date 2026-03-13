@@ -5,9 +5,9 @@ import Card from '../components/Card'
 import { featuredCategories } from '../data/products'
 
 const HERO_IMAGES = [
-  { src: '/assets/images/carousel1.jpg', alt: 'Nueva colección MeM' },
-  { src: '/assets/images/carousel3.webp', alt: 'Moda urbana MeM' },
-  { src: '/assets/images/carousel4.jpg', alt: 'Estilo MeM' },
+  { src: '/assets/images/carousel1.jpg', alt: 'Nueva colección MeM', position: 'object-center' },
+  { src: '/assets/images/carousel3.webp', alt: 'Moda urbana MeM', position: 'object-top' },
+  { src: '/assets/images/carousel4.jpg', alt: 'Estilo MeM', position: 'object-center' },
 ]
 const CAROUSEL_INTERVAL_MS = 5000
 
@@ -31,18 +31,18 @@ export default function HomePage() {
         <div
           className="
             relative w-full
-            aspect-[16/9]
-            min-h-[260px] sm:min-h-[300px] md:min-h-[340px]
-            bg-secondary/10 overflow-hidden
+            min-h-[590px] md:min-h-[690px] lg:min-h-[790px]
+            bg-secondary/20 overflow-hidden
           "
         >
+          <div className="absolute inset-0 bg-black/35 z-10" />
           {HERO_IMAGES.map((img, i) => (
             <img
               key={img.src}
               src={img.src}
               alt={img.alt}
-              className={`absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-500 ${
-                i === heroIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${img.position} ${
+                i === heroIndex ? 'opacity-100' : 'opacity-0'
               }`}
             />
           ))}
