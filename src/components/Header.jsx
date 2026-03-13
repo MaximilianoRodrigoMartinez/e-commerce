@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const navLinks = [
   { to: '/productos', label: 'Hombre' },
@@ -11,8 +11,9 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-
+  const [searchQuery, setSearchQuery] = useState('')
   const location = useLocation()
+  const navigate = useNavigate()
 
   // Cerrar menú móvil cuando cambia la ruta
   useEffect(() => {
@@ -33,13 +34,18 @@ export default function Header() {
           </Link>
           {/* Búsqueda: no centrada, al lado del logo en desktop */}
           <form
-            action="#"
             className="hidden md:flex items-center gap-2 flex-1 min-w-0 max-w-xs"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault()
+              const q = searchQuery.trim()
+              navigate(q ? `/productos?q=${encodeURIComponent(q)}` : '/productos')
+            }}
           >
             <input
               type="text"
               name="search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Buscar..."
               className="flex-1 min-w-0 h-9 px-3 rounded-full border border-white/20 bg-white/10 text-white placeholder:text-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
@@ -131,13 +137,19 @@ export default function Header() {
         <div className="h-full border-t border-white/10 bg-black px-4 py-4 flex flex-col gap-4 overflow-y-auto">
           {/* Búsqueda en móvil */}
           <form
-            action="#"
             className="flex items-center gap-2"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault()
+              const q = searchQuery.trim()
+              navigate(q ? `/productos?q=${encodeURIComponent(q)}` : '/productos')
+              setMenuOpen(false)
+            }}
           >
             <input
               type="text"
               name="search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Buscar productos, marcas..."
               className="flex-1 min-w-0 h-10 px-3 rounded-full border border-white/20 bg-white/10 text-white placeholder:text-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
             />

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import Card from '../components/Card'
 import ProductCard from '../components/ProductCard'
 import { fetchProducts } from '../api/productsApi'
@@ -10,6 +11,7 @@ const SORT_OPTIONS = [
 ]
 
 export default function ProductosPage() {
+  const [searchParams] = useSearchParams()
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -18,6 +20,12 @@ export default function ProductosPage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [maxPrice, setMaxPrice] = useState(200)
   const [sortOrder, setSortOrder] = useState('none')
+
+  // Sincronizar búsqueda con query ?q= del header
+  useEffect(() => {
+    const q = searchParams.get('q')
+    if (q != null) setSearchTerm(q)
+  }, [searchParams])
 
   useEffect(() => {
     let active = true

@@ -65,10 +65,10 @@ export const products = [
 ]
 
 export const featuredCategories = [
-  { label: 'Buzos y hoodies', sublabel: 'Abrigo', image: '/assets/images/grid1.jpg', link: '/productos' },
-  { label: 'Ella', sublabel: 'Colección', image: '/assets/images/grid2.jpg', link: '/productos' },
-  { label: 'Él', sublabel: 'Colección', image: '/assets/images/grid3.jpg', link: '/productos' },
-  { label: 'Kids', sublabel: 'Colección', image: '/assets/images/Grid4.jpg', link: '/productos' },
+  { label: 'Buzos y hoodies', sublabel: 'Abrigo', image: '/assets/images/hoodies.jpg', link: '/productos' },
+  { label: 'Ella', sublabel: 'Colección', image: '/assets/images/ella.jpg', link: '/productos' },
+  { label: 'Él', sublabel: 'Colección', image: '/assets/images/el.jpg', link: '/productos' },
+  { label: 'Kids', sublabel: 'Colección', image: '/assets/images/Kids.jpg', link: '/productos' },
 ]
 
 export const featuredProductIds = ['1', '3', '4', '5']
