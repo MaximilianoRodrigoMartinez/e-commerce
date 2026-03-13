@@ -109,7 +109,7 @@ export default function ProductosPage() {
             className="h-full w-auto object-contain blur-3xl scale-150"
           />
         </div>
-        <div className="relative max-w-page mx-auto px-4 py-16 md:py-20 flex flex-col md:flex-row items-start gap-10">
+        <div className="relative max-w-page mx-auto px-4 py-16 md:py-20 flex flex-col md:flex-row items-start md:items-center gap-10">
           <div className="flex-1 text-center md:text-left max-w-xl">
             <p className="text-xs uppercase tracking-[0.2em] text-gray-300 mb-3">Explorá la colección</p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-3 leading-tight text-white">
@@ -129,7 +129,7 @@ export default function ProductosPage() {
               </button>
             </div>
             {/* Beneficios con iconos */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
               <div className="bg-white/10 rounded-2xl px-4 py-3 flex items-start gap-3 border border-white/10">
                 <div className="w-9 h-9 rounded-full bg-black/30 flex items-center justify-center shrink-0">
                   <svg
@@ -148,7 +148,7 @@ export default function ProductosPage() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-white">Envíos a todo el país</p>
-                  <p className="text-xs text-gray-300">Recibí tu compra donde estés.</p>
+                  <p className="text-xs text-gray-300">Recibí tu pedido donde estés.</p>
                 </div>
               </div>
               <div className="bg-white/10 rounded-2xl px-4 py-3 flex items-start gap-3 border border-white/10">
@@ -169,7 +169,7 @@ export default function ProductosPage() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-white">3 cuotas sin interés</p>
-                  <p className="text-xs text-gray-300">Pagá en cuotas sin recargo.</p>
+                  <p className="text-xs text-gray-300">Pagá sin recargo.</p>
                 </div>
               </div>
               <div className="bg-white/10 rounded-2xl px-4 py-3 flex items-start gap-3 border border-white/10">
@@ -190,7 +190,7 @@ export default function ProductosPage() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-white">Cambios sin costo</p>
-                  <p className="text-xs text-gray-300">Si no te queda, lo cambiamos.</p>
+                  <p className="text-xs text-gray-300">Si no va, lo cambiás.</p>
                 </div>
               </div>
             </div>
