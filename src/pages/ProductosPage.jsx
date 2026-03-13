@@ -207,14 +207,14 @@ export default function ProductosPage() {
           </div>
         </div>
         {/* Wave decorativa */}
-        <div className="text-gray-100">
+        <div className="text-black">
           <svg
             className="w-full h-8 md:h-12"
             viewBox="0 0 1440 320"
             preserveAspectRatio="none"
           >
             <path
-              fill="currentColor"
+              fill="#000000"
               d="M0,224L48,224C96,224,192,224,288,208C384,192,480,160,576,133.3C672,107,768,85,864,96C960,107,1056,149,1152,165.3C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
             />
           </svg>
