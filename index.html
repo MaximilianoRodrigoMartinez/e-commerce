@@ -1,170 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="E-commerce de ropa urbana. Compra online con envíos a todo el país.">
-    <meta name="keywords" content="ecommerce, comprar, ropa urbana, Argentina">
-    <meta name="author" content="MeM">
-    <title>MeM</title>
-    <link rel="stylesheet" href="css/main.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Open+Sans:wght@300..800&display=swap');
-    </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="E-commerce de ropa urbana. Compra online con envíos a todo el país." />
+  <meta name="keywords" content="ecommerce, comprar, ropa urbana, Argentina" />
+  <meta name="author" content="MeM" />
+  <title>MeM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <!-- Logo -->
-        <div class="logo-up">
-            <a href="index.html"><img src="assets/images/logo.webp" alt="Logo"></a>
-        </div>
-        <!-- Barra de navegación superior -->
-        <nav class="up-navbar">
-            <!-- Barra de búsqueda -->
-            <div class="search-up">
-                <form class="search-form" action="#">
-                    <input type="text" name="search" id="search" placeholder="Buscar">
-                    <button>Buscar</button>
-                </form>
-            </div> 
-            <!-- Íconos a la derecha -->
-            <div class="up-navbar-icons">
-                <a href="pages/contacto.html"><img src="assets/images/correo-electronico.png" alt="Contacto"></a>
-                <a href="pages/registro.html"><img src="assets/images/usuario-de-perfil.png" alt="Perfil"></a>
-                <a href="pages/carrito.html"><img src="assets/images/carrito-de-compras.png" alt="Carrito"></a>
-            </div>
-        </nav>
-        <!-- Barra de navegación inferior -->
-        <nav class="navbar-up-bottom">
-            <ul class="up-navbar-menu">
-                <li><a href="pages/productos.html">Hombre</a></li>
-                <li><a href="pages/productos.html">Mujer</a></li>
-                <li><a href="pages/productos.html">Niños</a></li>
-                <li><a href="pages/productos.html">Calzado</a></li>
-                <li><a href="pages/quienes-somos.html">Quienes somos</a></li>
-            </ul>
-        </nav>    
-    </header>
-    <!-- Fila de marquesina -->
-    <div class="marquee">
-        <marquee>
-            <span>¡Envíos gratis a partir de $30.000! | 3 cuotas sin interés con todas las tarjetas</span>
-        </marquee>
-    </div>
-    <main>
-        <section class="home-hero">
-            <div class="home-hero-copy">
-                <p class="home-eyebrow">NUEVA TEMPORADA</p>
-                <h1 class="home-title">Moda urbana pensada para vivir en movimiento</h1>
-                <p class="home-subtitle">
-                    Prendas cómodas, versátiles y con estilo para el día a día.
-                    Envíos a todo el país y hasta 3 cuotas sin interés.
-                </p>
-                <div class="home-cta-row">
-                    <a href="pages/productos.html" class="btn btn-primary btn-lg">Ver catálogo completo</a>
-                    <a href="pages/carrito.html" class="btn btn-ghost btn-lg">Ir al carrito</a>
-                </div>
-                <p class="home-secondary-text">
-                    Envíos gratis desde $30.000 · Cambios sin costo en sucursal
-                </p>
-            </div>
-            <div class="home-hero-visual">
-                <img src="assets/images/carousel1.jpg" alt="Nueva colección MeM">
-            </div>
-        </section>
-
-        <section class="home-featured">
-            <h2>Destacados</h2>
-            <div class="home-featured-grid">
-                <article class="home-featured-card">
-                    <img src="assets/images/grid1.jpg" alt="Buzos">
-                    <div class="card-body">
-                        <p class="eyebrow">ABRIGO</p>
-                        <p>Buzos y hoodies</p>
-                        <a href="pages/productos.html" class="btn btn-link">Ver buzos</a>
-                    </div>
-                </article>
-                <article class="home-featured-card">
-                    <img src="assets/images/grid2.jpg" alt="Mujer">
-                    <div class="card-body">
-                        <p class="eyebrow">COLECCIÓN</p>
-                        <p>Ella</p>
-                        <a href="pages/productos.html" class="btn btn-link">Ver mujer</a>
-                    </div>
-                </article>
-                <article class="home-featured-card">
-                    <img src="assets/images/grid3.jpg" alt="Hombre">
-                    <div class="card-body">
-                        <p class="eyebrow">COLECCIÓN</p>
-                        <p>Él</p>
-                        <a href="pages/productos.html" class="btn btn-link">Ver hombre</a>
-                    </div>
-                </article>
-                <article class="home-featured-card">
-                    <img src="assets/images/Grid4.jpg" alt="Niños">
-                    <div class="card-body">
-                        <p class="eyebrow">COLECCIÓN</p>
-                        <p>Kids</p>
-                        <a href="pages/productos.html" class="btn btn-link">Ver niños</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="home-brands">
-            <h3>Nuestras marcas</h3>
-            <div class="brands-carousel">
-                <div class="brand-slide">
-                    <img src="assets/images/brands/nike.webp" alt="Nike">
-                </div>
-                <div class="brand-slide">
-                    <img src="assets/images/brands/adidas.png" alt="Adidas">
-                </div>
-                <div class="brand-slide">
-                    <img src="assets/images/brands/puma.png" alt="Puma">
-                </div>
-                <div class="brand-slide">
-                    <img src="assets/images/brands/hdp.png" alt="HDP">
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Navbar abajo -->
-            <div class="down-navbar-menu">
-                <ul>
-                    <li><a href="pages/productos.html">Hombre</a></li>
-                    <li><a href="pages/productos.html">Mujer</a></li>
-                    <li><a href="pages/productos.html">Niños</a></li>
-                    <li><a href="pages/productos.html">Calzado</a></li>
-                    <li><a href="pages/quienes-somos.html">Quienes somos</a></li>
-                </ul>
-            </div>
-            <!-- Iconos abajo -->
-            <div class="down-navbar-icons">
-                <a href="pages/contacto.html">
-                    <img class="correo-down" src="assets/images/correo-electronico.png" alt="Contacto">
-                </a>
-                <a href="pages/registro.html">
-                    <img class="registro-down" src="assets/images/usuario-de-perfil.png" alt="Perfil">
-                </a>
-                <a href="pages/carrito.html">
-                    <img class="carrito-down" src="assets/images/carrito-de-compras.png" alt="Carrito">
-                </a>
-            </div>
-            <!-- Logo abajo -->
-            <div class="logo-down">
-                <a href="index.html">
-                    <img class="logo-down" src="assets/images/logo.webp" alt="Logo">
-                </a>
-            </div>
-        </div>
-    </footer>
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

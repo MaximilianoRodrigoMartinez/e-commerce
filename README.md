@@ -8,38 +8,37 @@ Sitio de e-commerce de ropa urbana desarrollado como trabajo práctico. La marca
 - **Catálogo**: listado de productos con filtros por categoría y precio.
 - **Detalle de producto**: ficha con imagen, precio, descripción y CTAs.
 - **Carrito**: ítems, cantidades, resumen y botón finalizar compra.
-- **Contacto**: formulario con destinatario, datos y mensaje.
+- **Contacto y registro**: formularios con estilos consistentes.
 - **Quiénes somos**: presentación de la empresa y valores.
 
 ## Cómo levantar el proyecto
 
 1. Clonar o descargar el repo.
 2. Instalar dependencias: `npm install`
-3. Compilar estilos: `npm run build:css`
-4. Abrir `index.html` en el navegador (por ejemplo con Live Server en VS Code) o servir la carpeta con cualquier servidor estático.
+3. Desarrollo con recarga en caliente: `npm run dev` (abre http://localhost:5173)
+4. Build para producción: `npm run build` (genera la carpeta `dist/`)
 
-Para desarrollar con recarga de estilos al guardar:
+## Deploy en Netlify
 
-```bash
-npm run watch:css
-```
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+- SPA: el archivo `public/_redirects` redirige todas las rutas a `index.html` para React Router.
+- No se requiere backend.
 
 ## Stack
 
-- **HTML5** (páginas estáticas, semánticas)
-- **SCSS** (variables, mixins, componentes, layout por página)
-- **CSS compilado** en `css/main.css`
-- **Bootstrap 5** solo en la home (opcional, para grillas/carousel si se desea)
+- **React 18** + **Vite**
+- **React Router** (rutas: /, /productos, /productos/:id, /carrito, /contacto, /registro, /quienes-somos, /presentacion)
+- **Tailwind CSS** (paleta y componentes en `tailwind.config.js` y `src/index.css`)
 - **Google Fonts**: Roboto, Open Sans
 
 ## Estructura
 
-- `index.html` — Home
-- `pages/` — Productos, producto, carrito, contacto, quiénes somos, registro
-- `scss/` — Estilos modulares (abstracts, base, components, layout, pages)
-- `css/main.css` — Salida compilada
-- `assets/images/` — Imágenes y logo
-
-## Notas
-
-- El carrito y el catálogo son estáticos (sin backend). Para ver el **estado vacío del carrito**, agregar la clase `carrito-vacio` al `<main class="carrito-container">` en `pages/carrito.html`.
+- `index.html` — Punto de entrada de Vite
+- `src/main.jsx` — Bootstrap de la app (React + Router + CartProvider)
+- `src/App.jsx` — Rutas
+- `src/components/` — Layout, Header, Footer, MarqueeBanner, Button, Card, ProductCard
+- `src/pages/` — HomePage, ProductosPage, ProductoPage, CarritoPage, ContactoPage, RegistroPage, QuienesSomosPage, PresentacionPage
+- `src/data/products.js` — Datos de productos y categorías destacadas
+- `src/context/CartContext.jsx` — Estado del carrito
+- `public/assets/images/` — Imágenes y logo (se sirven en /assets/images/...)
