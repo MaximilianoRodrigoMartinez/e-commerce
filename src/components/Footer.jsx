@@ -32,6 +32,15 @@ export default function Footer() {
         </nav>
         <div className="flex items-center shrink-0 pl-4 sm:pl-5 border-l border-white/10">
           <div className="flex items-center gap-1 sm:gap-3">
+            <a
+              href="https://www.instagram.com/memstreetwear?igsh=OHJvZW9sbnVsanBh"
+              target="_blank"
+              rel="noreferrer"
+              className="p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
+              aria-label="Instagram MeM Streetwear"
+            >
+              <img src="/assets/images/IconoInstagram.png" alt="" className="w-7 h-7 sm:w-8 sm:h-8" />
+            </a>
             <Link
               to="/contacto"
               className="p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"

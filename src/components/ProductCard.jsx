@@ -32,17 +32,19 @@ export default function ProductCard({ product, showAddToCart = true, compact = f
   }
 
   return (
-    <article className="card overflow-hidden p-0 group hover:shadow-soft transition">
+    <article className="card overflow-hidden p-0 group hover:shadow-soft transition flex flex-col">
       <Link to={`/productos/${product.id}`} className="block">
-        <img src={product.image} alt={product.name} className="w-full aspect-square object-cover" />
+        <img src={product.image} alt={product.name} className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300" />
       </Link>
-      <div className="p-4">
-        <h3 className="font-semibold text-secondary">{product.name}</h3>
-        <p className="text-sm text-muted mt-0.5">{product.category}</p>
-        <p className="text-primary font-bold mt-2">${product.price.toLocaleString('es-AR')}</p>
-        <div className="flex gap-2 mt-3">
-          <Button className="flex-1 text-sm" onClick={handleAdd}>Agregar al carrito</Button>
-          <Link to={`/productos/${product.id}`} className="btn-outline text-sm px-3 py-2">Ver</Link>
+      <div className="p-4 flex flex-col flex-1">
+        <h3 className="font-semibold text-secondary line-clamp-2 leading-snug">{product.name}</h3>
+        <p className="text-xs text-muted mt-1 uppercase tracking-wide">{product.category}</p>
+        <p className="text-primary font-bold mt-3 text-base">${product.price.toLocaleString('es-AR')}</p>
+        <div className="flex gap-2 mt-3 items-center justify-between">
+          {showAddToCart && (
+            <Button className="flex-1 text-sm" onClick={handleAdd}>Agregar al carrito</Button>
+          )}
+          <Link to={`/productos/${product.id}`} className="btn-outline text-sm px-3 py-2 whitespace-nowrap">Ver</Link>
         </div>
       </div>
     </article>
