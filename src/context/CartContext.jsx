@@ -4,8 +4,8 @@ const CartContext = createContext(null)
 
 export function CartProvider({ children }) {
   const [items, setItems] = useState([
-    { productId: '1', name: 'Remera Oversize Negra', price: 9999, image: '/assets/images/remera.jpg', talle: 'M', color: 'Negro', qty: 1 },
-    { productId: '2', name: 'Remera Oversize Blanca', price: 9999, image: '/assets/images/remera.jpg', talle: 'L', color: 'Blanco', qty: 1 },
+    { productId: '1', name: 'Remera Oversize Negra', price: 9999, image: '/assets/images/RemeraOversizeNegra.jpg', talle: 'M', color: 'Negro', qty: 1 },
+    { productId: '2', name: 'Remera Oversize Blanca', price: 9999, image: '/assets/images/promo3.jpg', talle: 'L', color: 'Blanco', qty: 1 },
   ])
 
   const addItem = (item) => setItems((prev) => [...prev, item])

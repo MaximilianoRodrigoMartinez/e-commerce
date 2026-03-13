@@ -20,12 +20,18 @@ export default function ProductCard({ product, showAddToCart = true, compact = f
 
   if (compact) {
     return (
-      <div className="card min-w-[200px] text-center shrink-0 overflow-hidden p-0 hover:shadow-soft transition">
-        <img src={product.image} alt={product.name} className="w-full h-44 object-cover rounded-t-xl" />
+      <div className="card min-w-[200px] text-center shrink-0 overflow-hidden p-0 hover:shadow-soft transition border-gray-200 bg-white rounded-xl">
+        <Link to={`/productos/${product.id}`} className="block">
+          <img src={product.image} alt={product.name} className="w-full h-44 object-cover rounded-t-xl" />
+        </Link>
         <div className="p-3">
           <h3 className="font-semibold text-sm text-secondary">{product.name}</h3>
           <p className="font-bold text-primary text-sm">${product.price.toLocaleString('es-AR')}</p>
-          <Button className="w-full mt-2 text-sm" onClick={handleAdd}>Agregar al carrito</Button>
+          {showAddToCart ? (
+            <Button className="w-full mt-2 text-sm" onClick={handleAdd}>Agregar al carrito</Button>
+          ) : (
+            <Link to={`/productos/${product.id}`} className="btn-outline w-full mt-2 text-sm inline-block text-center py-2 rounded-full">Ver producto</Link>
+          )}
         </div>
       </div>
     )
