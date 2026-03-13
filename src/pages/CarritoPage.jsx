@@ -142,8 +142,31 @@ export default function CarritoPage() {
           <h2 className="text-xl font-heading font-semibold text-white mb-1 text-center">Productos destacados</h2>
           <p className="text-sm text-gray-300 text-center">Sumá más a tu look con estas prendas.</p>
         </div>
-        <div className="relative max-w-page mx-auto px-12">
-          <div className="flex items-center justify-center gap-4 overflow-hidden">
+        <div className="relative max-w-page mx-auto px-4 md:px-12">
+          {/* Mobile: una card por slide */}
+          <div className="md:hidden overflow-hidden w-full">
+            <div
+              className="flex transition-transform duration-300 ease-out"
+              style={{
+                width: `${featured.length * 100}%`,
+                transform: `translateX(-${carouselIndex * (100 / featured.length)}%)`,
+              }}
+            >
+              {featured.map((p) => (
+                <div
+                  key={p.id}
+                  className="flex justify-center items-center shrink-0 grow-0 px-2"
+                  style={{ flexBasis: `${100 / featured.length}%` }}
+                >
+                  <div className="w-full max-w-[280px]">
+                    <ProductCard product={p} compact showAddToCart={false} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Desktop: activa a color y resto en gris */}
+          <div className="hidden md:flex items-center justify-center gap-4 overflow-hidden">
             {featured.map((p, index) => (
               <div
                 key={p.id}

@@ -31,12 +31,12 @@ export default function HomePage() {
   return (
     <>
       {/* Hero con carrusel */}
-      <section className="px-0 pb-0">
+      <section className="px-0 pb-0 overflow-x-hidden">
         {/* Carousel arriba, ancho completo y grande */}
         <div
           className="
             relative w-full
-            min-h-[480px] sm:min-h-[540px] md:min-h-[640px] lg:min-h-[740px]
+            min-h-[380px] sm:min-h-[540px] md:min-h-[640px] lg:min-h-[740px]
             bg-secondary/20 overflow-hidden
           "
         >
@@ -161,8 +161,31 @@ export default function HomePage() {
           <h2 className="text-xl font-heading font-semibold text-white mb-1 text-center">Productos destacados</h2>
           <p className="text-sm text-gray-300 text-center">Armá tu look con estas prendas.</p>
         </div>
-        <div className="relative max-w-page mx-auto px-12">
-          <div className="flex items-center justify-center gap-4 overflow-hidden">
+        <div className="relative max-w-page mx-auto px-4 md:px-12">
+          {/* Mobile: una card por slide */}
+          <div className="md:hidden overflow-hidden w-full">
+            <div
+              className="flex transition-transform duration-300 ease-out"
+              style={{
+                width: `${featured.length * 100}%`,
+                transform: `translateX(-${featuredIndex * (100 / featured.length)}%)`,
+              }}
+            >
+              {featured.map((p) => (
+                <div
+                  key={p.id}
+                  className="flex justify-center items-center shrink-0 grow-0 px-2"
+                  style={{ flexBasis: `${100 / featured.length}%` }}
+                >
+                  <div className="w-full max-w-[280px]">
+                    <ProductCard product={p} compact showAddToCart={true} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Desktop: activa a color y resto en gris */}
+          <div className="hidden md:flex items-center justify-center gap-4 overflow-hidden">
             {featured.map((p, index) => (
               <div
                 key={p.id}
