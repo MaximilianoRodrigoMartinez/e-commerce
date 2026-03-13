@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-black text-white shadow-lg">
       {/* Fila principal: logo, búsqueda a un lado, iconos ordenados */}
-      <div className="flex items-center justify-between gap-4 px-4 sm:px-6 py-3">
+      <div className="flex items-center justify-between h-20 sm:h-22 gap-4 px-4 sm:px-6 py-5 sm:py-6">
         <div className="flex items-center gap-4 min-w-0">
           <Link to="/" className="shrink-0 flex items-center" aria-label="Inicio">
             <img
@@ -45,47 +45,48 @@ export default function Header() {
           </form>
         </div>
 
-        {/* Iconos: ordenados y alineados a la derecha */}
-        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
-          <Link
-            to="/contacto"
-            className="p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
-            aria-label="Contacto"
-          >
-            <img src="/assets/images/correo-electronico.png" alt="" className="w-5 h-5 sm:w-6 sm:h-6" />
-          </Link>
-          <Link
-            to="/registro"
-            className="p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
-            aria-label="Perfil"
-          >
-            <img src="/assets/images/usuario-de-perfil.png" alt="" className="w-5 h-5 sm:w-6 sm:h-6" />
-          </Link>
-          <Link
-            to="/carrito"
-            className="p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
-            aria-label="Carrito"
-          >
-            <img src="/assets/images/carrito-de-compras.png" alt="" className="w-5 h-5 sm:w-6 sm:h-6" />
-          </Link>
-          {/* Hamburguesa solo en móvil */}
-          <button
-            type="button"
-            onClick={() => setMenuOpen((o) => !o)}
-            className="md:hidden p-2 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
-            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
+        {/* Iconos: bloque agrupado con separador */}
+        <div className="flex items-center shrink-0 pl-4 sm:pl-5 border-l border-white/10">
+          <div className="flex items-center gap-1 sm:gap-3">
+            <Link
+              to="/contacto"
+              className="p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
+              aria-label="Contacto"
+            >
+              <img src="/assets/images/correo-electronico.png" alt="" className="w-6 h-6" />
+            </Link>
+            <Link
+              to="/registro"
+              className="p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
+              aria-label="Perfil"
+            >
+              <img src="/assets/images/usuario-de-perfil.png" alt="" className="w-6 h-6" />
+            </Link>
+            <Link
+              to="/carrito"
+              className="p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
+              aria-label="Carrito"
+            >
+              <img src="/assets/images/carrito-de-compras.png" alt="" className="w-6 h-6" />
+            </Link>
+            <button
+              type="button"
+              onClick={() => setMenuOpen((o) => !o)}
+              className="md:hidden p-2.5 rounded-full text-gray-300 hover:text-white hover:bg-white/10 transition"
+              aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </div>
 

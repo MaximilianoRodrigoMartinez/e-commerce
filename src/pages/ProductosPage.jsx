@@ -19,9 +19,9 @@ export default function ProductosPage() {
   return (
     <div className="max-w-page mx-auto px-4 py-8">
       <section
-        className="text-center py-10 rounded-xl mb-8 bg-secondary text-white bg-cover bg-center"
+        className="text-center py-12 rounded-xl mb-8 text-white bg-cover bg-center"
         style={{
-          backgroundImage: "linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.8)), url('/assets/images/logo.webp')",
+          backgroundImage: "linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), url('/assets/images/carousel2.webp')",
         }}
       >
         <h1 className="text-3xl font-heading font-bold">MeM</h1>
