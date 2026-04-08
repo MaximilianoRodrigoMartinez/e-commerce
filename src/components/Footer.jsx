@@ -72,13 +72,6 @@ export default function Footer() {
             </a>
           </nav>
           <p className="text-center sm:text-left text-gray-500">© {new Date().getFullYear()} MeM Streetwear. Todos los derechos reservados.</p>
-          <p className="text-center sm:text-left text-gray-500 max-w-3xl">
-            Datos del titular del sitio (razón social, CUIT y domicilio fiscal): disponibles a solicitud en{' '}
-            <a href="mailto:hola@memstreetwear.com" className="text-gray-400 hover:text-white underline">
-              hola@memstreetwear.com
-            </a>
-            .
-          </p>
         </div>
       </div>
     </footer>
