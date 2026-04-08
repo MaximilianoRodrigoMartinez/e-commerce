@@ -265,27 +265,6 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-
-      <section className="max-w-page mx-auto px-4 pb-12 border-t border-gray-100 pt-8">
-        <h3 className="text-xl font-heading font-semibold text-secondary mb-6 text-center">Nuestras marcas</h3>
-        <div className="flex flex-wrap justify-center items-center gap-6">
-          <div className="w-28 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
-            <img src="/assets/images/brands/nike.webp" alt="Nike" className="w-full h-auto" />
-          </div>
-          <div className="w-28 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
-            <img src="/assets/images/brands/adidas.png" alt="Adidas" className="w-full h-auto" />
-          </div>
-          <div className="w-28 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
-            <img src="/assets/images/brands/puma.png" alt="Puma" className="w-full h-auto" />
-          </div>
-          <div className="w-32 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
-            <img src="/assets/images/brands/newera.png" alt="New Era" className="w-full h-auto transform scale-125" />
-          </div>
-          <div className="w-28 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
-            <img src="/assets/images/brands/hdp.png" alt="HDP" className="w-full h-auto" />
-          </div>
-        </div>
-      </section>
     </>
   )
 }
